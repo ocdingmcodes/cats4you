@@ -1,0 +1,375 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(30, 16%, 50%);
+  --text-color: #fff;
+  --text-color-black: hsl(30, 8%, 15%);
+  --body-color: hsl(30, 100%, 98%);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --h3-font-size: 1rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --h3-font-size: 1.125rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: .4s; 
+}
+
+.nav {
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.bg-image {
+  /* The image used */
+  background-image: url("https://cdn.glitch.global/a026b2b4-4a54-424c-be93-0942098f9c15/796257a6-4e71-49cf-973f-fd81a30e021b.image.png?v=1693620222199");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  /*background-color: rgb(0,0,0, 0.4); /* Fallback color 
+  background-color: rgba(0,0,0, 0.7);*/ /* Black w/opacity/see-through */
+  /* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+background: rgba(141, 115, 93, 0.33);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.3px);
+-webkit-backdrop-filter: blur(9.3px);
+border: 1px solid rgba(141, 115, 93, 1);
+  color: white;
+  font-weight: 500;
+  border: 3px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 90%;
+  padding: 50px;
+  justify-content: center;
+  text-align: center;
+}
+
+.home__buttons{
+  display: inline;
+  justify-content: space-between;
+}
+
+.button {
+  border-radius: 1rem;
+  display: inline;
+  background-color: #E1306C;
+  padding: 15px;
+  font-weight: var(--font-medium);
+  border-radius: 3rem;
+  color: white;
+  transition: all .3s;
+  overflow: hidden;
+  z-index: 2;
+ 
+}
+
+
+
+ section2 {
+            display: flex;
+background: linear-gradient(102.71deg, rgba(217, 217, 217, .5) 0%, rgba(217, 217, 217, 0) 100%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(28px);
+  border-radius: 32px;
+  opacity: .9;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 70vh;
+        }
+ 
+        section2 .layout {
+            position: relative;
+                 
+            width: 100%;
+            max-width: 600px;
+            padding: 50px;
+         
+          /* From https://css.glass */
+
+        }
+ 
+        section2 .layout::before {
+            content: '';
+            position: absolute;
+                 
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+ 
+        section2 .layout h1 {
+            position: relative;
+            text-align: center;
+            color: rgb(36, 168, 36);
+        }
+ 
+        section2 .layout p {
+            position: relative;
+            color: #fff;
+        }
+ 
+        section2 .layout button {
+            position: relative;
+        }
+
+/*=============== GALLERY ===============*/
+.gallery {
+  height: 100vh;
+  display: grid;
+ 
+  align-content: center;
+  justify-content: center;
+}
+
+.gallery__card {
+  position: relative;
+
+  width: 208px;
+  height: 268px;
+  border-radius: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.gallery__img, 
+.gallery__card::after, 
+.gallery__data {
+  position: absolute;
+}
+
+.gallery__img {
+  inset: 0;
+ 
+  margin: auto;
+  transition: transform .3s;
+}
+
+.gallery__card::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+              hsla(0, 0%, 100%, 0) 32%,
+              hsla(0, 0%, 0%, .3) 100%);
+  top: 0;
+  z-index: 1;
+}
+
+.gallery__data {
+  bottom: 1.5rem;
+  left: 1.75rem;
+  z-index: 10;
+}
+
+.gallery__title, 
+.gallery__subtitle {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.gallery__title {
+  font-size: var(--h3-font-size);
+}
+
+.gallery__subtitle {
+  font-size: var(--smaller-font-size);
+}
+
+.gallery__overflow {
+  position: relative;
+}
+
+.gallery__thumbnail {
+  position: relative;
+  width: 60px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.2px);
+-webkit-backdrop-filter: blur(50.2px);
+border: 1px solid rgba(235, 197, 197, 0.33);
+  height: 60px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform .3s;
+}
+
+.gallery__thumbnail-img {
+  position: absolute;
+  inset: 0;
+ 
+  margin: auto;
+}
+
+/* Swiper class */
+.gallery-cards,
+.gallery-thumbs {
+  width: 260px;
+}
+
+.gallery-cards:hover .gallery__img {
+  transform: scale(1.1);
+}
+
+.gallery .swiper-wrapper {
+  padding: 2.5rem 0;
+}
+
+.gallery-thumbs {
+  height: 132px;
+}
+
+/* Active thumbnail */
+.swiper-slide-active .gallery__thumbnail {
+  transform: translateY(-1.25rem) scale(1.2);
+}
+
+/* Rotate thumbnail */
+.swiper-slide-next .gallery__thumbnail {
+  transform: rotate(15deg);
+}
+
+.swiper-slide-prev .gallery__thumbnail {
+  transform: rotate(-15deg);
+}
+
+/* Sliding numbers */
+.swiper-pagination-fraction {
+  font-size: var(--small-font-size);
+  letter-spacing: -1px;
+  font-weight: 500;
+  color: var(--first-color);
+  bottom: 0;
+}
+
+/* Arrow buttons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: '';
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 1.5rem;
+  color: transparent;
+  top: 5.5rem;
+}
+
+.swiper-button-next {
+  right: -1.5rem;
+  transform: rotate(15deg);
+}
+
+.swiper-button-prev {
+  left: -1.5rem;
+  transform: rotate(-15deg);
+}
+
+/* Other swiper settings */
+.gallery-cards::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.swiper-horizontal.swiper-css-mode > .swiper-wrapper {
+  scroll-snap-type: initial;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 1024px) {
+  .gallery__card {
+    width: 220px;
+    height: 290px;
+  }
+  .gallery__thumbnail {
+    width: 65px;
+    height: 65px;
+  }
+  .gallery-cards,
+  .gallery-thumbs {
+    width: 280px;
+  }
+}
